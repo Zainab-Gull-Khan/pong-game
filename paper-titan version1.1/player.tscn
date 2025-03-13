@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://ch5ufmb51agya"]
+
+[ext_resource type="Texture2D" uid="uid://bl2ba3d8qktjg" path="res://assets/assests for pong/plane.jpeg" id="1_35vgc"]
+
+[node name="player" type="Node2D"]
+
+[node name="plane" type="Sprite2D" parent="."]
+position = Vector2(39, 35)
+scale = Vector2(0.0866667, 0.101015)
+texture = ExtResource("1_35vgc")

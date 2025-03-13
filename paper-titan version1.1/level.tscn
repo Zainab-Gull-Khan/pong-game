@@ -1,21 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://br3t743h3dj56"]
+[gd_scene load_steps=5 format=3 uid="uid://br3t743h3dj56"]
 
 [ext_resource type="Texture2D" uid="uid://dhf8po8gxu7hh" path="res://assets/bg.jpg" id="1_fdexu"]
 [ext_resource type="PackedScene" uid="uid://ch5ufmb51agya" path="res://player.tscn" id="2_k080g"]
 [ext_resource type="PackedScene" uid="uid://bqv8cbh4gubkx" path="res://enemy.tscn" id="3_1b0bp"]
-[ext_resource type="Script" path="res://player.gd" id="3_w7yu1"]
 [ext_resource type="PackedScene" uid="uid://dyiy0qduh4uyw" path="res://power_up.tscn" id="4_axjar"]
 
 [node name="level" type="Node2D"]
 
 [node name="bg" type="Sprite2D" parent="."]
-position = Vector2(576.318, 360.5)
+position = Vector2(571, 361)
 scale = Vector2(1.83285, 1.72422)
 texture = ExtResource("1_fdexu")
 
 [node name="player" parent="." instance=ExtResource("2_k080g")]
-position = Vector2(911, 372)
-script = ExtResource("3_w7yu1")
 
 [node name="enemy" parent="." instance=ExtResource("3_1b0bp")]
 position = Vector2(-5, -49)

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyiy0qduh4uyw"]
+
+[ext_resource type="Texture2D" uid="uid://c1ix0mbjk4q1h" path="res://assets/assests for pong/paperclip.jpeg" id="1_4phyy"]
+[ext_resource type="Texture2D" uid="uid://snbouaey3krf" path="res://assets/assests for pong/thumbpin.jpeg" id="2_av6bv"]
+
+[node name="power_up" type="Node2D"]
+
+[node name="paperclip" type="Sprite2D" parent="."]
+position = Vector2(327, 232)
+scale = Vector2(0.0952206, 0.0664605)
+texture = ExtResource("1_4phyy")
+
+[node name="Sprite2D" type="Sprite2D" parent="paperclip"]
+position = Vector2(2446.95, 1218.77)
+scale = Vector2(0.791751, 1.10054)
+texture = ExtResource("2_av6bv")

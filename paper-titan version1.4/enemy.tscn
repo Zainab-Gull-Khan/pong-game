@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=3 uid="uid://tywenuab8pyi"]
+
+[ext_resource type="Script" path="res://enemy.gd" id="1_hk4a4"]
+[ext_resource type="Texture2D" uid="uid://ba4ldv5h5cyq6" path="res://assets/assests for pong/fire.jpeg" id="1_udqjt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cv7i5"]
+size = Vector2(62, 77)
+
+[node name="enemy" type="Area2D"]
+script = ExtResource("1_hk4a4")
+
+[node name="Fire" type="Sprite2D" parent="."]
+position = Vector2(497.5, 235.75)
+scale = Vector2(0.136364, 0.113363)
+texture = ExtResource("1_udqjt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(498.5, 235.75)
+shape = SubResource("RectangleShape2D_cv7i5")
+
+[node name="Fire2" type="Sprite2D" parent="."]
+position = Vector2(819.5, 215.75)
+scale = Vector2(0.136364, 0.113363)
+texture = ExtResource("1_udqjt")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(819, 215.75)
+shape = SubResource("RectangleShape2D_cv7i5")
+
+[node name="Fire3" type="Sprite2D" parent="."]
+position = Vector2(247.5, 346.75)
+scale = Vector2(0.136364, 0.113363)
+texture = ExtResource("1_udqjt")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(248, 346)
+shape = SubResource("RectangleShape2D_cv7i5")
+
+[node name="Fire4" type="Sprite2D" parent="."]
+position = Vector2(710.5, 490.75)
+scale = Vector2(0.136364, 0.113363)
+texture = ExtResource("1_udqjt")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(708.5, 491.25)
+shape = SubResource("RectangleShape2D_cv7i5")
+
+[node name="Fire5" type="Sprite2D" parent="."]
+position = Vector2(387.5, 525.75)
+scale = Vector2(0.136364, 0.113363)
+texture = ExtResource("1_udqjt")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
+position = Vector2(387.5, 526.75)
+shape = SubResource("RectangleShape2D_cv7i5")
+
+[node name="Fire6" type="Sprite2D" parent="."]
+position = Vector2(903.5, 396.75)
+scale = Vector2(0.136364, 0.113363)
+texture = ExtResource("1_udqjt")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="."]
+position = Vector2(906.5, 396.75)
+shape = SubResource("RectangleShape2D_cv7i5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

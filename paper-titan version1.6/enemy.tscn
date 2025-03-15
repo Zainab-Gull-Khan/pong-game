@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://tywenuab8pyi"]
+
+[ext_resource type="Script" path="res://enemy.gd" id="1_hk4a4"]
+[ext_resource type="Texture2D" uid="uid://ba4ldv5h5cyq6" path="res://assets/assests for pong/fire.jpeg" id="1_udqjt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cv7i5"]
+size = Vector2(62, 77)
+
+[node name="enemy" type="Area2D"]
+script = ExtResource("1_hk4a4")
+
+[node name="Fire" type="Sprite2D" parent="."]
+position = Vector2(497.5, 235.75)
+scale = Vector2(0.136364, 0.113363)
+texture = ExtResource("1_udqjt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(498.5, 235.75)
+shape = SubResource("RectangleShape2D_cv7i5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

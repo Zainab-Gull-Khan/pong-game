@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://dyiy0qduh4uyw"]
+
+[ext_resource type="Texture2D" uid="uid://c1ix0mbjk4q1h" path="res://assets/assests for pong/paperclip.jpeg" id="1_4phyy"]
+[ext_resource type="Script" path="res://ImmunityPowerUp.gd" id="1_qda76"]
+[ext_resource type="Texture2D" uid="uid://snbouaey3krf" path="res://assets/assests for pong/thumbpin.jpeg" id="2_av6bv"]
+[ext_resource type="Texture2D" uid="uid://bngoy4g33uqf4" path="res://assets/assests for pong/binder clip.jpeg" id="3_ma2lo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o0e0c"]
+size = Vector2(43, 66.5)
+
+[node name="power_up" type="Area2D"]
+script = ExtResource("1_qda76")
+
+[node name="paperclip" type="Sprite2D" parent="."]
+position = Vector2(349, 263.641)
+scale = Vector2(0.0823529, 0.06014)
+texture = ExtResource("1_4phyy")
+
+[node name="Thumb Pin" type="Sprite2D" parent="paperclip"]
+position = Vector2(1159.64, 50.9603)
+scale = Vector2(0.709844, 1.44966)
+texture = ExtResource("2_av6bv")
+
+[node name="BinderClip" type="Sprite2D" parent="paperclip/Thumb Pin"]
+position = Vector2(1083.95, 9.99704)
+scale = Vector2(0.958264, 0.930521)
+texture = ExtResource("3_ma2lo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(349.5, 263.5)
+shape = SubResource("RectangleShape2D_o0e0c")

@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://dsglk6x06ddnh"]
+
+[ext_resource type="Script" path="res://MainMenu.gd" id="1_7xlrq"]
+[ext_resource type="Texture2D" uid="uid://cpi5ur8wom0rt" path="res://download (1).jpg" id="2_xdan2"]
+
+[sub_resource type="SystemFont" id="SystemFont_lep0h"]
+
+[sub_resource type="FontVariation" id="FontVariation_yswqo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_884yh"]
+bg_color = Color(0.760008, 0.538564, 0.477842, 1)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_7xlrq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(574.978, 345.899)
+scale = Vector2(1.7693, 1.59863)
+texture = ExtResource("2_xdan2")
+
+[node name="Quit_Button" type="Button" parent="Sprite2D"]
+offset_left = -75.1584
+offset_top = 83.8846
+offset_right = 58.8416
+offset_bottom = 174.885
+theme_override_colors/font_color = Color(0.0202394, 0.0313171, 0.103955, 1)
+theme_override_fonts/font = SubResource("SystemFont_lep0h")
+theme_override_font_sizes/font_size = 46
+text = "Quit"
+
+[node name="Play_Button" type="Button" parent="Sprite2D"]
+offset_left = -71.202
+offset_top = -21.2051
+offset_right = 49.798
+offset_bottom = 67.7949
+theme_override_colors/font_color = Color(0.00941352, 0.0144405, 0.0601809, 1)
+theme_override_fonts/font = SubResource("FontVariation_yswqo")
+theme_override_font_sizes/font_size = 54
+theme_override_styles/normal = SubResource("StyleBoxFlat_884yh")
+text = "Play"
+flat = true
+
+[node name="PaperTitan_heading" type="Label" parent="Sprite2D"]
+offset_left = -182.901
+offset_top = -103.509
+offset_right = 154.099
+offset_bottom = -11.5085
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 55
+text = "Paper Titan"
+
+[connection signal="pressed" from="Sprite2D/Quit_Button" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Sprite2D/Play_Button" to="." method="_on_play_button_pressed"]

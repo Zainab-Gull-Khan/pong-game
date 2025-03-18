@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0dcm74ip1n"]
+
+[ext_resource type="Script" path="res://game_over_screen.gd" id="1_coufx"]
+
+[sub_resource type="FontFile" id="FontFile_hvobk"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/100/0/ascent = 0.0
+cache/0/100/0/descent = 0.0
+cache/0/100/0/underline_position = 0.0
+cache/0/100/0/underline_thickness = 0.0
+cache/0/100/0/scale = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_77th8"]
+bg_color = Color(0.751833, 0.523308, 0.613128, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_afyd6"]
+bg_color = Color(0.548657, 0.581298, 0.810698, 1)
+
+[node name="GameOverScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_coufx")
+
+[node name="GameOverText" type="Label" parent="."]
+layout_mode = 0
+offset_left = 307.0
+offset_top = 182.0
+offset_right = 882.0
+offset_bottom = 316.0
+theme_override_colors/font_color = Color(0.784314, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontFile_hvobk")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_77th8")
+text = "GAME OVER!"
+
+[node name="Quit_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 512.0
+offset_top = 443.0
+offset_right = 657.0
+offset_bottom = 526.0
+theme_override_colors/font_disabled_color = Color(0.685377, 0.431823, 0.288103, 1)
+theme_override_colors/font_color = Color(0.696417, 0.228528, 0.282147, 1)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_afyd6")
+text = "Quit"
+
+[connection signal="pressed" from="Quit_button" to="." method="_on_quit_button_pressed"]

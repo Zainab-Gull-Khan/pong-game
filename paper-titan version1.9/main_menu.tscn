@@ -1,0 +1,107 @@
+[gd_scene load_steps=9 format=3 uid="uid://dsglk6x06ddnh"]
+
+[ext_resource type="Script" path="res://MainMenu.gd" id="1_7xlrq"]
+
+[sub_resource type="FontFile" id="FontFile_7xxql"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/100/0/ascent = 0.0
+cache/0/100/0/descent = 0.0
+cache/0/100/0/underline_position = 0.0
+cache/0/100/0/underline_thickness = 0.0
+cache/0/100/0/scale = 1.0
+
+[sub_resource type="Theme" id="Theme_42mnl"]
+
+[sub_resource type="FontFile" id="FontFile_wmr21"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/60/0/ascent = 0.0
+cache/0/60/0/descent = 0.0
+cache/0/60/0/underline_position = 0.0
+cache/0/60/0/underline_thickness = 0.0
+cache/0/60/0/scale = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_884yh"]
+bg_color = Color(0.760008, 0.538564, 0.477842, 1)
+
+[sub_resource type="FontFile" id="FontFile_aep37"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/60/0/ascent = 0.0
+cache/0/60/0/descent = 0.0
+cache/0/60/0/underline_position = 0.0
+cache/0/60/0/underline_thickness = 0.0
+cache/0/60/0/scale = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n7wrn"]
+bg_color = Color(0.301961, 0.301961, 0.301961, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gnkx4"]
+bg_color = Color(0.301961, 0.301961, 0.301961, 1)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_7xlrq")
+
+[node name="PaperTitan_heading" type="Label" parent="."]
+layout_mode = 0
+offset_left = 368.0
+offset_top = 28.0
+offset_right = 863.0
+offset_bottom = 162.0
+theme_override_colors/font_color = Color(0.426117, 0.945039, 0.532073, 1)
+theme_override_fonts/font = SubResource("FontFile_7xxql")
+theme_override_font_sizes/font_size = 100
+text = "Paper Titan"
+
+[node name="Play_Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 524.0
+offset_top = 227.0
+offset_right = 640.0
+offset_bottom = 316.0
+theme = SubResource("Theme_42mnl")
+theme_override_colors/font_color = Color(0.955512, 0.573585, 0.898484, 1)
+theme_override_fonts/font = SubResource("FontFile_wmr21")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_884yh")
+text = "Play"
+flat = true
+
+[node name="Quit_Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 524.0
+offset_top = 395.0
+offset_right = 646.0
+offset_bottom = 484.0
+theme_override_colors/font_color = Color(0.758954, 0.430751, 0.410865, 1)
+theme_override_fonts/font = SubResource("FontFile_aep37")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/hover = SubResource("StyleBoxFlat_n7wrn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_gnkx4")
+text = "Quit"
+
+[connection signal="pressed" from="Play_Button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Quit_Button" to="." method="_on_quit_button_pressed"]

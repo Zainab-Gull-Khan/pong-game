@@ -1,0 +1,121 @@
+[gd_scene load_steps=14 format=3 uid="uid://br3t743h3dj56"]
+
+[ext_resource type="Texture2D" uid="uid://dhf8po8gxu7hh" path="res://assets/bg.jpg" id="1_fdexu"]
+[ext_resource type="Script" path="res://level.gd" id="1_pdsaq"]
+[ext_resource type="Script" path="res://bg.gd" id="2_jr4sp"]
+[ext_resource type="PackedScene" uid="uid://ch5ufmb51agya" path="res://player.tscn" id="2_k080g"]
+[ext_resource type="PackedScene" uid="uid://dyiy0qduh4uyw" path="res://power_up.tscn" id="4_axjar"]
+[ext_resource type="Script" path="res://paddle_l_1.gd" id="6_l08ok"]
+[ext_resource type="Script" path="res://paddel_l_2.gd" id="7_guwir"]
+[ext_resource type="Script" path="res://paddel_r_1.gd" id="8_3d7a0"]
+[ext_resource type="Script" path="res://paddel_r_2.gd" id="9_65q42"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8qwq5"]
+size = Vector2(32, 204)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_27xhe"]
+size = Vector2(29, 203)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hvu24"]
+size = Vector2(34, 208)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ryo7"]
+size = Vector2(35, 197)
+
+[node name="level" type="Node2D"]
+position = Vector2(-1, -3)
+script = ExtResource("1_pdsaq")
+
+[node name="bg" type="Sprite2D" parent="."]
+position = Vector2(576, 362)
+scale = Vector2(1.83706, 1.72452)
+texture = ExtResource("1_fdexu")
+script = ExtResource("2_jr4sp")
+
+[node name="player" parent="." instance=ExtResource("2_k080g")]
+position = Vector2(1082, 336)
+
+[node name="power_up" parent="." instance=ExtResource("4_axjar")]
+position = Vector2(159, 231)
+
+[node name="enemytimer" type="Timer" parent="."]
+wait_time = 0.32
+autostart = true
+
+[node name="Enemies" type="Node2D" parent="."]
+position = Vector2(308, 75)
+
+[node name="paddle_L1" type="ColorRect" parent="."]
+offset_left = 68.0
+offset_top = 98.0
+offset_right = 101.0
+offset_bottom = 305.0
+color = Color(0.635659, 0.678241, 0.785961, 1)
+script = ExtResource("6_l08ok")
+
+[node name="L1_area2d" type="Area2D" parent="paddle_L1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="paddle_L1/L1_area2d"]
+position = Vector2(17, 103)
+shape = SubResource("RectangleShape2D_8qwq5")
+
+[node name="paddel_L2" type="ColorRect" parent="."]
+offset_left = 73.0
+offset_top = 430.0
+offset_right = 103.0
+offset_bottom = 635.0
+color = Color(0.635294, 0.678431, 0.784314, 1)
+script = ExtResource("7_guwir")
+
+[node name="L2_area2d" type="Area2D" parent="paddel_L2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="paddel_L2/L2_area2d"]
+position = Vector2(14.5, 102.5)
+shape = SubResource("RectangleShape2D_27xhe")
+
+[node name="paddel_R1" type="ColorRect" parent="."]
+offset_left = 1046.0
+offset_top = 97.0
+offset_right = 1081.0
+offset_bottom = 305.0
+color = Color(0.635294, 0.678431, 0.784314, 1)
+script = ExtResource("8_3d7a0")
+
+[node name="R1_area2d" type="Area2D" parent="paddel_R1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="paddel_R1/R1_area2d"]
+position = Vector2(18, 104)
+shape = SubResource("RectangleShape2D_hvu24")
+
+[node name="paddel_R2" type="ColorRect" parent="."]
+offset_left = 1047.0
+offset_top = 416.0
+offset_right = 1083.0
+offset_bottom = 615.0
+color = Color(0.635294, 0.678431, 0.784314, 1)
+script = ExtResource("9_65q42")
+
+[node name="R2_area2d" type="Area2D" parent="paddel_R2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="paddel_R2/R2_area2d"]
+position = Vector2(19.5, 101.5)
+shape = SubResource("RectangleShape2D_5ryo7")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ImmunityBar" type="ProgressBar" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -72.0
+offset_top = 29.0
+offset_right = 159.0
+offset_bottom = 56.0
+grow_horizontal = 2
+size_flags_vertical = 4
+
+[connection signal="timeout" from="enemytimer" to="." method="_on_enemytimer_timeout"]
+[connection signal="body_entered" from="paddle_L1/L1_area2d" to="paddle_L1" method="_on_l_1_area_2d_body_entered"]
+[connection signal="body_entered" from="paddel_L2/L2_area2d" to="paddel_L2" method="_on_l_2_area_2d_body_entered"]
+[connection signal="body_entered" from="paddel_R1/R1_area2d" to="paddel_R1" method="_on_r_1_area_2d_body_entered"]
+[connection signal="body_entered" from="paddel_R2/R2_area2d" to="paddel_R2" method="_on_r_2_area_2d_body_entered"]

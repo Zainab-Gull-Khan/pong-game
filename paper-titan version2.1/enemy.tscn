@@ -1,0 +1,78 @@
+[gd_scene load_steps=5 format=3 uid="uid://tywenuab8pyi"]
+
+[ext_resource type="Script" path="res://enemy.gd" id="1_hk4a4"]
+[ext_resource type="Texture2D" uid="uid://ba4ldv5h5cyq6" path="res://assets/assests for pong/fire.jpeg" id="1_udqjt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cv7i5"]
+size = Vector2(62, 77)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v151y"]
+size = Vector2(62.125, 74.25)
+
+[node name="enemy" type="Area2D"]
+script = ExtResource("1_hk4a4")
+
+[node name="Fire" type="Sprite2D" parent="."]
+position = Vector2(487.5, 141.75)
+scale = Vector2(0.136364, 0.113363)
+texture = ExtResource("1_udqjt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(487, 142)
+shape = SubResource("RectangleShape2D_cv7i5")
+
+[node name="Fire2" type="Sprite2D" parent="."]
+position = Vector2(276, 377.375)
+scale = Vector2(0.138528, 0.112237)
+texture = ExtResource("1_udqjt")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(275.938, 376.875)
+shape = SubResource("RectangleShape2D_v151y")
+
+[node name="Fire3" type="Sprite2D" parent="."]
+position = Vector2(531, 337.375)
+scale = Vector2(0.138528, 0.112237)
+texture = ExtResource("1_udqjt")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(531, 337.375)
+shape = SubResource("RectangleShape2D_v151y")
+
+[node name="Fire4" type="Sprite2D" parent="."]
+position = Vector2(200, 205.375)
+scale = Vector2(0.138528, 0.112237)
+texture = ExtResource("1_udqjt")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(200, 205.375)
+shape = SubResource("RectangleShape2D_v151y")
+
+[node name="Fire5" type="Sprite2D" parent="."]
+position = Vector2(811, 467.375)
+scale = Vector2(0.138528, 0.112237)
+texture = ExtResource("1_udqjt")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
+position = Vector2(811, 467.375)
+shape = SubResource("RectangleShape2D_v151y")
+
+[node name="Fire6" type="Sprite2D" parent="."]
+position = Vector2(780, 213.375)
+scale = Vector2(0.138528, 0.112237)
+texture = ExtResource("1_udqjt")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="."]
+position = Vector2(780, 213.375)
+shape = SubResource("RectangleShape2D_v151y")
+
+[node name="Fire7" type="Sprite2D" parent="."]
+position = Vector2(184, 537)
+scale = Vector2(0.138528, 0.112237)
+texture = ExtResource("1_udqjt")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="."]
+position = Vector2(185, 536)
+shape = SubResource("RectangleShape2D_v151y")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

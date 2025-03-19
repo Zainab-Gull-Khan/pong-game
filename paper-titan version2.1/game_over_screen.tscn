@@ -1,0 +1,128 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0dcm74ip1n"]
+
+[ext_resource type="Script" path="res://game_over_screen.gd" id="1_coufx"]
+[ext_resource type="Texture2D" uid="uid://dhf8po8gxu7hh" path="res://assets/bg.jpg" id="2_8xo6y"]
+
+[sub_resource type="FontFile" id="FontFile_hvobk"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/100/0/ascent = 0.0
+cache/0/100/0/descent = 0.0
+cache/0/100/0/underline_position = 0.0
+cache/0/100/0/underline_thickness = 0.0
+cache/0/100/0/scale = 1.0
+cache/0/99/0/ascent = 0.0
+cache/0/99/0/descent = 0.0
+cache/0/99/0/underline_position = 0.0
+cache/0/99/0/underline_thickness = 0.0
+cache/0/99/0/scale = 1.0
+cache/0/98/0/ascent = 0.0
+cache/0/98/0/descent = 0.0
+cache/0/98/0/underline_position = 0.0
+cache/0/98/0/underline_thickness = 0.0
+cache/0/98/0/scale = 1.0
+cache/0/97/0/ascent = 0.0
+cache/0/97/0/descent = 0.0
+cache/0/97/0/underline_position = 0.0
+cache/0/97/0/underline_thickness = 0.0
+cache/0/97/0/scale = 1.0
+cache/0/96/0/ascent = 0.0
+cache/0/96/0/descent = 0.0
+cache/0/96/0/underline_position = 0.0
+cache/0/96/0/underline_thickness = 0.0
+cache/0/96/0/scale = 1.0
+cache/0/95/0/ascent = 0.0
+cache/0/95/0/descent = 0.0
+cache/0/95/0/underline_position = 0.0
+cache/0/95/0/underline_thickness = 0.0
+cache/0/95/0/scale = 1.0
+cache/0/94/0/ascent = 0.0
+cache/0/94/0/descent = 0.0
+cache/0/94/0/underline_position = 0.0
+cache/0/94/0/underline_thickness = 0.0
+cache/0/94/0/scale = 1.0
+cache/0/93/0/ascent = 0.0
+cache/0/93/0/descent = 0.0
+cache/0/93/0/underline_position = 0.0
+cache/0/93/0/underline_thickness = 0.0
+cache/0/93/0/scale = 1.0
+cache/0/92/0/ascent = 0.0
+cache/0/92/0/descent = 0.0
+cache/0/92/0/underline_position = 0.0
+cache/0/92/0/underline_thickness = 0.0
+cache/0/92/0/scale = 1.0
+cache/0/91/0/ascent = 0.0
+cache/0/91/0/descent = 0.0
+cache/0/91/0/underline_position = 0.0
+cache/0/91/0/underline_thickness = 0.0
+cache/0/91/0/scale = 1.0
+cache/0/90/0/ascent = 0.0
+cache/0/90/0/descent = 0.0
+cache/0/90/0/underline_position = 0.0
+cache/0/90/0/underline_thickness = 0.0
+cache/0/90/0/scale = 1.0
+cache/0/89/0/ascent = 0.0
+cache/0/89/0/descent = 0.0
+cache/0/89/0/underline_position = 0.0
+cache/0/89/0/underline_thickness = 0.0
+cache/0/89/0/scale = 1.0
+cache/0/88/0/ascent = 0.0
+cache/0/88/0/descent = 0.0
+cache/0/88/0/underline_position = 0.0
+cache/0/88/0/underline_thickness = 0.0
+cache/0/88/0/scale = 1.0
+cache/0/87/0/ascent = 0.0
+cache/0/87/0/descent = 0.0
+cache/0/87/0/underline_position = 0.0
+cache/0/87/0/underline_thickness = 0.0
+cache/0/87/0/scale = 1.0
+cache/0/86/0/ascent = 0.0
+cache/0/86/0/descent = 0.0
+cache/0/86/0/underline_position = 0.0
+cache/0/86/0/underline_thickness = 0.0
+cache/0/86/0/scale = 1.0
+cache/0/85/0/ascent = 0.0
+cache/0/85/0/descent = 0.0
+cache/0/85/0/underline_position = 0.0
+cache/0/85/0/underline_thickness = 0.0
+cache/0/85/0/scale = 1.0
+cache/0/84/0/ascent = 0.0
+cache/0/84/0/descent = 0.0
+cache/0/84/0/underline_position = 0.0
+cache/0/84/0/underline_thickness = 0.0
+cache/0/84/0/scale = 1.0
+cache/0/83/0/ascent = 0.0
+cache/0/83/0/descent = 0.0
+cache/0/83/0/underline_position = 0.0
+cache/0/83/0/underline_thickness = 0.0
+cache/0/83/0/scale = 1.0
+cache/0/82/0/ascent = 0.0
+cache/0/82/0/descent = 0.0
+cache/0/82/0/underline_position = 0.0
+cache/0/82/0/underline_thickness = 0.0
+cache/0/82/0/scale = 1.0
+
+[node name="GameOverScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_coufx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(579, 350.5)
+scale = Vector2(1.85303, 1.65707)
+texture = ExtResource("2_8xo6y")
+
+[node name="GameOverText" type="Label" parent="Sprite2D"]
+offset_left = -237.988
+offset_top = -59.4421
+offset_right = 337.012
+offset_bottom = 74.5579
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontFile_hvobk")
+theme_override_font_sizes/font_size = 82
+text = "GAME OVER!"

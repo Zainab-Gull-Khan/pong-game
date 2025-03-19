@@ -1,0 +1,80 @@
+[gd_scene load_steps=10 format=3 uid="uid://dsglk6x06ddnh"]
+
+[ext_resource type="Script" path="res://MainMenu.gd" id="1_7xlrq"]
+[ext_resource type="Texture2D" uid="uid://cpi5ur8wom0rt" path="res://download (1).jpg" id="2_xdan2"]
+
+[sub_resource type="SystemFont" id="SystemFont_lep0h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h1f66"]
+bg_color = Color(0.964706, 0.964706, 0.964706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4rhfd"]
+bg_color = Color(0.964706, 0.964706, 0.964706, 1)
+border_color = Color(0.964706, 0.964706, 0.964706, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_yswqo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2o6nj"]
+bg_color = Color(0.262997, 0.486193, 0.312877, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_71f4n"]
+bg_color = Color(0.220575, 0.547922, 0.42605, 1)
+border_color = Color(0.197195, 0.463096, 0.357666, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hme3i"]
+bg_color = Color(0.964706, 0.964706, 0.964706, 1)
+shadow_color = Color(0.400436, 0.262403, 0.104636, 0.6)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_7xlrq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(574.978, 345.899)
+scale = Vector2(1.7693, 1.59863)
+texture = ExtResource("2_xdan2")
+
+[node name="Quit_Button" type="Button" parent="Sprite2D"]
+offset_left = -71.2022
+offset_top = 70.7487
+offset_right = 62.7978
+offset_bottom = 161.749
+theme_override_colors/font_hover_color = Color(0.905269, 3.34509e-06, 1.15514e-06, 1)
+theme_override_colors/font_color = Color(0.0202394, 0.0313171, 0.103955, 1)
+theme_override_fonts/font = SubResource("SystemFont_lep0h")
+theme_override_font_sizes/font_size = 46
+theme_override_styles/hover = SubResource("StyleBoxFlat_h1f66")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4rhfd")
+text = "Quit"
+
+[node name="Play_Button" type="Button" parent="Sprite2D"]
+offset_left = -65.5502
+offset_top = -6.8177
+offset_right = 55.4498
+offset_bottom = 82.1823
+theme_override_colors/font_hover_color = Color(0, 0.686638, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_yswqo")
+theme_override_font_sizes/font_size = 46
+theme_override_styles/hover = SubResource("StyleBoxFlat_2o6nj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_71f4n")
+text = "Play"
+flat = true
+
+[node name="PaperTitan_heading" type="Label" parent="Sprite2D"]
+offset_left = -159.938
+offset_top = -93.7672
+offset_right = 177.062
+offset_bottom = -1.76665
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.990245, 0.862976, 0.832747, 1)
+theme_override_colors/font_outline_color = Color(0.0416624, 0.12515, 0.194302, 1)
+theme_override_font_sizes/font_size = 55
+theme_override_styles/normal = SubResource("StyleBoxFlat_hme3i")
+text = "Paper Titan"
+
+[connection signal="pressed" from="Sprite2D/Quit_Button" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Sprite2D/Play_Button" to="." method="_on_play_button_pressed"]

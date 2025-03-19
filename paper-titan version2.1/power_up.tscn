@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://dyiy0qduh4uyw"]
+
+[ext_resource type="Texture2D" uid="uid://c1ix0mbjk4q1h" path="res://assets/assests for pong/paperclip.jpeg" id="1_4phyy"]
+[ext_resource type="Script" path="res://ImmunityPowerUp.gd" id="1_qda76"]
+[ext_resource type="Texture2D" uid="uid://bngoy4g33uqf4" path="res://assets/assests for pong/binder clip.jpeg" id="3_xe547"]
+[ext_resource type="Texture2D" uid="uid://snbouaey3krf" path="res://assets/assests for pong/thumbpin.jpeg" id="4_bjfyl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o0e0c"]
+size = Vector2(43, 66.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nk6r8"]
+size = Vector2(68.5, 62)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gwx3n"]
+size = Vector2(56, 60)
+
+[node name="power_up" type="Area2D"]
+script = ExtResource("1_qda76")
+
+[node name="paperclip" type="Sprite2D" parent="."]
+position = Vector2(333, 229.641)
+scale = Vector2(0.0823529, 0.06014)
+texture = ExtResource("1_4phyy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(333, 229.641)
+shape = SubResource("RectangleShape2D_o0e0c")
+
+[node name="BinderClip" type="Sprite2D" parent="."]
+position = Vector2(589.5, 427.625)
+scale = Vector2(0.086035, 0.0750612)
+texture = ExtResource("3_xe547")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(588.5, 427.625)
+shape = SubResource("RectangleShape2D_nk6r8")
+
+[node name="Thumbpin" type="Sprite2D" parent="."]
+position = Vector2(581.75, 119.25)
+scale = Vector2(0.0715174, 0.078368)
+texture = ExtResource("4_bjfyl")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(582.75, 119.25)
+shape = SubResource("RectangleShape2D_gwx3n")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
